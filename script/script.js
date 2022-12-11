@@ -14,7 +14,7 @@ function incluirDigito(digito) {
         return
     }
 
-    if (operacao !== null) {
+    if (operacao !== null) {  
         n2 = n2 + digito;
         mostrarNoDisplay(n2);
     } else {
