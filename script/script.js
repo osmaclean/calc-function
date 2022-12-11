@@ -6,6 +6,14 @@ let n2 = "";
 
 function incluirDigito(digito) {
 
+    if (n2 && operacao && clicadoEmIgual) {
+        clicadoEmIgual = false;
+        limpar();
+        n1 = digito;
+        mostrarNoDisplay(n1);
+        return
+    }
+
     if (operacao !== null) {
         n2 = n2 + digito;
         mostrarNoDisplay(n2);
@@ -27,6 +35,22 @@ function finalizarCalculo() {
     n1 = resultado;
     mostrarNoDisplay(n1);
     console.log('n1', n1, 'operacao', operacao, 'n2', n2)
+}
+
+function obterPorcento() {
+
+    if (!n2) {
+        limpar();
+        mostrarNoDisplay(n1)
+    } else {
+        if (operacao === "+" || operacao === "-") {
+            var porcento = n1 * n2 / 100;
+        } else {
+            var porcento = n2 / 100;
+        }
+        n2 = porcento;
+        mostrarNoDisplay(n2)
+    }
 }
 
 function calcular() {
@@ -72,6 +96,7 @@ function iniciarCalculo(simbolo) {
 }
 
 function incluirPonto() {
+
     if (operacao && n2 === "") {
         n2 = "0.";
     } else if (operacao && n2) {
@@ -81,7 +106,8 @@ function incluirPonto() {
     }
 }
 
-function limpar(){
+function limpar() {
+
     n1 = "0";
     operacao = null;
     n2 = "";
@@ -89,6 +115,7 @@ function limpar(){
 }
 
 function mostrarNoDisplay(valor) {
+
     document.querySelector('#display').innerHTML = valor;
 }
 
