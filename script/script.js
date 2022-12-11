@@ -34,7 +34,7 @@ function finalizarCalculo() {
     let resultado = calcular();
     n1 = resultado;
     mostrarNoDisplay(n1);
-    console.log('n1', n1, 'operacao', operacao, 'n2', n2)
+    // console.log('n1', n1, 'operacao', operacao, 'n2', n2)
 }
 
 function obterPorcento() {
