@@ -19,8 +19,18 @@ function incluirDigito(digito) {
     }
 }
 
+let clicadoEmIgual = false;
+
+function finalizarCalculo() {
+    clicadoEmIgual = true;
+    let resultado = calcular();
+    n1 = resultado;
+    mostrarNoDisplay(n1);
+    console.log('n1', n1, 'operacao', operacao, 'n2', n2)
+}
+
 function calcular() {
-    
+
     let nCalculado = 0;
     let _n1 = parseFloat(n1);
     let _n2 = parseFloat(n2);
@@ -44,7 +54,12 @@ function calcular() {
 
 function iniciarCalculo(simbolo) {
 
-    if(operacao === null || n2 === ""){
+    if (clicadoEmIgual) {
+        clicadoEmIgual = false;
+        n2 = "";
+    }
+
+    if (operacao === null || n2 === "") {
         operacao = simbolo;
     } else {
         // Já tem n1, operacao e n2.
@@ -54,10 +69,23 @@ function iniciarCalculo(simbolo) {
         n2 = "";
         mostrarNoDisplay(n1)
     }
+}
 
-    operacao = simbolo;
+function incluirPonto() {
+    if (operacao && n2 === "") {
+        n2 = "0.";
+    } else if (operacao && n2) {
+        n2 += ".";
+    } else {
+        n1 += ".";
+    }
+}
 
-    console.log(n1, operacao, n2);
+function limpar(){
+    n1 = "0";
+    operacao = null;
+    n2 = "";
+    mostrarNoDisplay(n1)
 }
 
 function mostrarNoDisplay(valor) {
