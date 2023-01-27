@@ -8,6 +8,12 @@
 
 <hr>
 
+## Link do Deploy (Vercel)
+
+https://calc-function.vercel.app/
+
+<hr>
+
 # IDE Utilizada
 
 <div> 
