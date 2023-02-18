@@ -8,7 +8,7 @@
 
 <hr>
 
-## Link do Deploy (Vercel)
+## Link de Acesso ao Projeto (Vercel)
 
 https://calc-function.vercel.app/
 
